@@ -1,0 +1,113 @@
+﻿@model Hidromil.Models.Slika
+@{
+    Layout = "_LayoutGalerija";
+    ViewData["Title"] = "Galerija";
+}
+@{
+    IList<Slika> slikee = ViewBag.Slike;
+   
+}
+<form enctype="multipart/form-data">
+    <div class="banner-carousel banner-carousel-2 mb-0">
+        <div class="banner-area" style="        background-image: url(../images/Images/heavy-equipment.png)">
+        </div>
+    </div>
+
+    <div class="gap-40"></div>
+    <div class="container">
+        <div class="row shuffle-wrapper">
+            <div class="col-1 shuffle-sizer"></div>
+            @foreach (var slika in slikee)
+            {
+                <div class="col-lg-4 col-sm-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                    <div class="project-img-container">
+                        @{
+                            byte[] data = System.Convert.FromBase64String(slika.Putanja);
+                            //string contentType = "image/png";
+                            //string b64Data = slika.Putanja;
+
+                            //string blob = System.Convert.base64;
+                            //string decodedString =  File(contents, "image/png", "test" + ".png");
+                            //System.Text.Encoding.UTF8.GetString(data);
+                            //System.Text.Encoding.Unicode.GetString(data, 0, data.Length);
+                            //const b64toBlob = (base64, type = 'application/octet-stream') =>  fetch(`data:${ type}; base64,${ base64}`).then(res => res.blob());
+
+                        }
+                        <a class="gallery-popup gallery" href="@HtmlEncoder.Encode(slika.Putanja)" aria-label="project-img">
+                            <img src="data:image/png;base64,@slika.Putanja" class="img-fluid" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                            <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="gap-40"></div>
+
+
+   
+
+
+
+
+</form>
+
+<style scoped>
+        .gallery {
+            margin-bottom: 30px;
+        }
+
+            .gallery .gallery-img {
+                width: 100%;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                margin-bottom: 35px;
+            }
+
+                .gallery .gallery-img img {
+                    position: relative;
+                    max-width: 100%;
+                    min-width: 100%;
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    transform: scale(1);
+                    -webkit-transition: 0.9s;
+                    -o-transition: 0.9s;
+                    transition: 0.9s;
+                }
+
+                .gallery .gallery-img:hover img {
+                    -webkit-transform: scale(1.1);
+                    -moz-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    -o-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+
+        .img {
+            display: flex;
+            height: 300px;
+            max-width: 100%;
+            justify-content: center;
+        }
+
+        .s1 {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-columns: 33% 33% 33%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .s2 {
+            width: 80%;
+            height: 80%;
+        }
+    </style>
+
+

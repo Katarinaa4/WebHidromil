@@ -1,0 +1,255 @@
+﻿@model Hidromil.Models.ViewModels.LoginVM
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Constra - Construction Html5 Template</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="icon" type="image/png" href="~/images/favicon.png">
+
+    <!-- CSS
+    ================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/plugins/bootstrap/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="~/plugins/fontawesome/css/all.min.css">
+    <!-- Animation -->
+    <link rel="stylesheet" href="~/plugins/animate-css/animate.css">
+    <!-- slick Carousel -->
+    <link rel="stylesheet" href="~/plugins/slick/slick.css">
+    <link rel="stylesheet" href="~/plugins/slick/slick-theme.css">
+    <!-- Colorbox -->
+    <link rel="stylesheet" href="~/plugins/colorbox/colorbox.css">
+    <!-- Template styles-->
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="~/css/superfish.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+
+</head>
+<body>
+    <div class="body-inner">
+
+
+        <!--/ Topbar end -->
+        <!-- Header start -->
+        <header id="header" class="header-two">
+            <div class="site-navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg navbar-light p-0">
+
+                                <div class="logo">
+                                    <a class="d-block" href="index-2.html">
+                                        <img loading="lazy" src="../images/favicon.png" alt="Hidromil">Hidromil
+                                    </a>
+                                </div><!-- logo end -->
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+
+                                </button>
+
+                                <div id="navbar-collapse" class="collapse navbar-collapse" style="margin-left:10px;">
+                                    <ul class="nav navbar-nav ml-auto align-items-lg-start">
+                                        <li class="nav-item active">
+                                            <a asp-controller="Home" asp-action="Index" class="nav-link">Početna </a>
+
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a asp-controller="Home" asp-action="ONama" class="nav-link">O nama</a>
+
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a asp-controller="Home" asp-action="Uslege" class="nav-link">Usluge </a>
+
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a asp-controller="Home" asp-action="Galerija" class="nav-link">Galerija </a>
+
+                                        </li>
+
+                                        <li class="nav-item ">
+                                            <a asp-controller="Home" asp-action="Kontakt" class="nav-link ">Kontakt </a>
+
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                                    <partial name="_LoginPartial" />
+                                </div>
+                            </nav>
+                        </div>
+                        <!--/ Col end -->
+                    </div>
+                    <!--/ Row end -->
+                </div>
+                <!--/ Container end -->
+
+            </div>
+            <!--/ Navigation end -->
+        </header>
+        <!--/ Header end -->
+        <br />
+        <div class="container">
+            <h2>Welcome back!</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <section id="loginForm">
+                        <form id="account" method="post" asp-action="Login" asp-controller="Account">
+
+                            <div class="form-group row">
+                                <label class="col-md-2" asp-for="@Model.Email"></label>
+                                <div class="col-md-10">
+                                    <input asp-for="@Model.Email" class="form-control" />
+                                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2" asp-for="@Model.Password"></label>
+                                <div class="col-md-10">
+                                    <input asp-for="@Model.Password" class="form-control" />
+                                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 offset-md-2 select-checkbox">
+                                    <label asp-for="@Model.RememberMe" class="pr-4 pl-0">
+                                        <input asp-for="@Model.RememberMe" />
+                                    </label>
+                                    Remember me?
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 offset-md-2">
+                                    <input type="submit" value="Log in" class="btn btn-success" asp-controller="Account" asp-action="OnPostLoginAsync" />
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature are end -->
+
+
+        <footer id="footer" class="footer bg-overlay">
+
+            <div class="copyright footer">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="copyright-info text-center text-md-center">
+                                <div class="footer-social">
+                                    <ul>
+                                        <li>
+                                            <a href="https://facebook.com/themefisher" aria-label="Facebook">
+                                                <i class="fab fa-facebook-square" style="color:black;"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter" style="color:black;"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://instagram.com/themefisher" aria-label="Instagram">
+                                                <i class="fab fa-instagram" style="color:black;"></i>
+                                            </a>
+                                        </li>
+                                        <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github" style="color:black;"></i></a></li>
+                                    </ul>
+                                </div><!-- Footer social end -->
+                            </div>
+                        </div>
+
+
+                    </div><!-- Row end -->
+
+                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+                        <button class="btn btn-primary" title="Back to Top">
+                            <i class="fa fa-angle-double-up"></i>
+                        </button>
+                    </div>
+
+                </div><!-- Container end -->
+            </div><!-- Copyright end -->
+        </footer><!-- Footer end -->
+        <!-- Javascript Files
+    ================================================== -->
+        <!-- initialize jQuery Library -->
+        <script src="~/plugins/jQuery/jquery.min.js"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="~/plugins/bootstrap/bootstrap.min.js" defer></script>
+        <!-- Slick Carousel -->
+        <script src="~/plugins/slick/slick.min.js"></script>
+        <script src="~/plugins/slick/slick-animation.min.js"></script>
+        <!-- Color box -->
+        <script src="~/plugins/colorbox/jquery.colorbox.js"></script>
+        <!-- shuffle -->
+        <script src="~/plugins/shuffle/shuffle.min.js" defer></script>
+
+        <script src="~/dist/scripts.min.js"></script>
+        <!--Skripta za pribavljanje podataka o korisniku koji se prikazuju u Account padajucoj listi-->
+        <script src="~/lib/jquery-data-getter/account-data-getter-organizator-ajax-jquery.js"></script>
+
+        <!-- Google Map API Key-->
+        <script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+        <!-- Google Map Plugin-->
+        <script src="~/plugins/google-map/map.js" defer></script>
+
+        <!-- Template custom -->
+        <script src="../js/script.js"></script>
+
+    </div><!-- Body inner end -->
+</body>
+
+</html>
+
+<style scoped>
+    .k {
+        width: 100%;
+        text-align: end;
+        align-content: end;
+        margin-left: 200px;
+    }
+</style>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" /> }

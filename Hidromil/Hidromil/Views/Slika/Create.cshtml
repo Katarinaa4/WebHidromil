@@ -1,0 +1,19 @@
+﻿@model Hidromil.Models.Slika
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+
+            <input asp-for="@Model.SlikaFajl" type="file" name="SlikaFajl" id="SlikaFajl" />
+            <input type="button" value="Change Image" onclick="document.getElementById('SlikaFajl').click();" class="btn btn-yellow" />
+
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-primary" asp-action="Create" />
+        </div>
+    
+</form>
+
