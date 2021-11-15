@@ -132,7 +132,7 @@ namespace Hidromil.Controllers
             {
                 var admin = new Admin
                 {
-                    Name = model.Name,
+                    AdminName = model.Name,
                     Lastname = model.Lastname,
                     Email = model.Email,
                     Password = model.Password,

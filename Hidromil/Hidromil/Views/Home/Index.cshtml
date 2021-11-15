@@ -1,4 +1,22 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using Hidromil.Data
+@inject SignInManager<Admin> SignInManager
+@inject UserManager<Admin> UserManager
+@{
+    ViewData["Title"] = "Hidromil";
+    if (User.IsInRole(Role.Admin.ToString()))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+    }
+
+}
+
+
+@{
     Layout = "_LayoutIndex";
     ViewData["Title"] = "Hidromil - Početna";
 }

@@ -80,8 +80,9 @@ namespace Hidromil
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
-            Hidromil.Models.Inicijalizacija.Initialize(context, userManager, roleManager).Wait();
+            //Hidromil.Models.Inicijalizacija.Initialize(context, userManager, roleManager).Wait();
         }
     }
 }

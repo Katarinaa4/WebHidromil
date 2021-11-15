@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\source\\repos\\Hidromil\\Hidromil\\Hidromil.csproj": {}
+    "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\source\\repos\\Hidromil\\Hidromil\\Hidromil.csproj": {
+    "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\source\\repos\\Hidromil\\Hidromil\\Hidromil.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj",
         "projectName": "Hidromil",
-        "projectPath": "C:\\Users\\Korisnik\\source\\repos\\Hidromil\\Hidromil\\Hidromil.csproj",
+        "projectPath": "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj",
         "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\source\\repos\\Hidromil\\Hidromil\\obj\\",
+        "outputPath": "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://eeapps.blob.core.windows.net/eeapps/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -40,49 +41,47 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Identity": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[5.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.12, )"
             },
-            "Microsoft.Extensions.Identity.Core": {
+            "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.0, )"
             },
-            "Microsoft.Extensions.Identity.Stores": {
+            "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[5.0.11, )"
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

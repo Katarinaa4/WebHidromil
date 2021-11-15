@@ -13,7 +13,7 @@ namespace Hidromil.Models
        
 
         [BindProperty]
-        public string Name { get; set; }
+        public string AdminName { get; set; }
 
         [BindProperty]
         public string Lastname { get; set; }

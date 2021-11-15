@@ -31,7 +31,7 @@ namespace Hidromil.Models
             {
                 var user = new Admin
                 {
-                    Name = "Sasa",
+                    AdminName = "Sasa",
                     Lastname = "Milojkovic",
                     Email = "Admin123@hirdromil.rs"
 
