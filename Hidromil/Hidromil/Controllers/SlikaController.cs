@@ -1,5 +1,6 @@
 ﻿using Hidromil.Data;
 using Hidromil.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -47,8 +48,15 @@ namespace Hidromil.Controllers
             return View();
         }
 
+        [HttpGet]
+        [Authorize]
+        public IActionResult IndexSlikaAdmin()
+        {
+            return View();
+        }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Create()
         {
             return View();

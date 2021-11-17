@@ -4,14 +4,25 @@
 @inject UserManager<Admin> UserManager
 @if (signInManager.IsSignedIn(User))
 {
+<ul class="nav navbar-nav">
 
-}
-else
-{
-    <ul class="nav navbar-nav">
-        <li>
-            <a class="nav-link" id="loginLink" asp-controller="Account" asp-action="Login">Sign In</a>
-            @*@Html.ActionLink("Sign In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
-        </li>
-    </ul>
-}
+    <li class=" text-bold">
+        <a id="manage" style="margin-left: 5px; margin-right:5px; font-weight: bold; " class="">@UserManager.GetUserName(User)</a>
+    </li>
+    <li class=" accent-danger" style="background:#ffb600; text-align:center;">
+        <form id="logoutForm" class="" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button id="logout" type="submit" class=" btn " style="text-align: center;">Logout</button>
+        </form>
+    </li>
+
+</ul>
+        }
+        else
+        {
+        <ul class="nav navbar-nav">
+            <li>
+                <a class="nav-link" id="loginLink" asp-controller="Account" asp-action="Login">Sign In</a>
+                @*@Html.ActionLink("Sign In", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
+            </li>
+        </ul>
+        }

@@ -1,5 +1,6 @@
 ﻿using Hidromil.Data;
 using Hidromil.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -17,16 +18,25 @@ namespace Hidromil.Controllers
 
         private readonly ApplicationDBContext _db;
 
-        public HomeController(ApplicationDBContext db)
+        private readonly UserManager<Admin> _userManager;
+
+        public HomeController(ApplicationDBContext db, UserManager<Admin> userManager)
         {
             _db = db;
+            _userManager = userManager;
         }
 
         [BindProperty]
         public IList<Slika> Slike { get; set; }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(User);
+
+            if (user != null)
+            {
+                var role = await _userManager.GetRolesAsync(user);
+            }
             return View();
         }
 

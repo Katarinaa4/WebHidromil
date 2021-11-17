@@ -939,3 +939,4 @@ C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\R
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Slika\IndexSlikaAdmin.cshtml.g.cs
