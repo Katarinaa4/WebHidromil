@@ -26,6 +26,10 @@ namespace Hidromil.Controllers
         public int br { get; set; }
 
 
+        [BindProperty]
+        public IList<Slika> Slike { get; set; }
+
+
         public SlikaController(ApplicationDBContext db)
         {
             _db = db;
@@ -52,6 +56,14 @@ namespace Hidromil.Controllers
         [Authorize]
         public IActionResult IndexSlikaAdmin()
         {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult GalerijaAdmin()
+        {
+            Slike = _db.Slike.ToList();
+            ViewBag.Slike = Slike;
             return View();
         }
 
@@ -83,6 +95,7 @@ namespace Hidromil.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Create(Slika slika)
         {
             if (slika.SlikaFajl != null)

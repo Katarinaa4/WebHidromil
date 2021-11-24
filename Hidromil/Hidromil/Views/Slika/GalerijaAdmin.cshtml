@@ -1,11 +1,11 @@
 ﻿@model Hidromil.Models.Slika
 @{
-    Layout = "_LayoutGalerija";
+    Layout = "_LayoutGalerijaAdmin";
     ViewData["Title"] = "Galerija";
 }
 @{
     IList<Slika> slikee = ViewBag.Slike;
-   
+
 }
 <form enctype="multipart/form-data">
     <div class="banner-carousel banner-carousel-2 mb-0">
@@ -14,6 +14,10 @@
     </div>
 
     <div class="gap-40"></div>
+    <div class="container">
+        <input type="submit" value="Dodaj sliku" asp-controller="Slika" asp-action="Create" />
+    </div>
+    <div class="gap-20"></div>
     <div class="container">
         <div class="row shuffle-wrapper">
             <div class="col-1 shuffle-sizer"></div>
@@ -40,74 +44,66 @@
                     </div>
                 </div>
             }
+
         </div>
     </div>
     <div class="gap-40"></div>
-
-
-   
-
-
-
-
 </form>
 
 <style scoped>
-        .gallery {
-            margin-bottom: 30px;
+    .gallery {
+        margin-bottom: 30px;
+    }
+
+        .gallery .gallery-img {
+            width: 100%;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 35px;
         }
 
-            .gallery .gallery-img {
-                width: 100%;
-                float: left;
-                overflow: hidden;
+            .gallery .gallery-img img {
                 position: relative;
-                z-index: 1;
-                margin-bottom: 35px;
+                max-width: 100%;
+                min-width: 100%;
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+                -webkit-transition: 0.9s;
+                -o-transition: 0.9s;
+                transition: 0.9s;
             }
 
-                .gallery .gallery-img img {
-                    position: relative;
-                    max-width: 100%;
-                    min-width: 100%;
-                    -webkit-transform: scale(1);
-                    -moz-transform: scale(1);
-                    -ms-transform: scale(1);
-                    -o-transform: scale(1);
-                    transform: scale(1);
-                    -webkit-transition: 0.9s;
-                    -o-transition: 0.9s;
-                    transition: 0.9s;
-                }
+            .gallery .gallery-img:hover img {
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                transform: scale(1.1);
+            }
 
-                .gallery .gallery-img:hover img {
-                    -webkit-transform: scale(1.1);
-                    -moz-transform: scale(1.1);
-                    -ms-transform: scale(1.1);
-                    -o-transform: scale(1.1);
-                    transform: scale(1.1);
-                }
+    .img {
+        display: flex;
+        height: 300px;
+        max-width: 100%;
+        justify-content: center;
+    }
 
-        .img {
-            display: flex;
-            height: 300px;
-            max-width: 100%;
-            justify-content: center;
-        }
+    .s1 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 33% 33% 33%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
-        .s1 {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-            grid-template-columns: 33% 33% 33%;
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-        .s2 {
-            width: 80%;
-            height: 80%;
-        }
-    </style>
-
-
+    .s2 {
+        width: 80%;
+        height: 80%;
+    }
+</style>

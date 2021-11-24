@@ -1,19 +1,29 @@
 ﻿@model Hidromil.Models.Slika
 @{
+    Layout = "_LayoutGalerijaAdmin";
     ViewData["Title"] = "Create";
 }
+<div style=" display:flex; flex:1;">
+    <div class="content-wrapper" >
+        <section class="content">
+            <div class="container-fluid">
+                <form method="post" asp-action="Create" enctype="multipart/form-data">
 
-<form method="post" asp-action="Create" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly"></div>
-        <div class="form-group">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="container">
+                        <div class="gap-40"></div>
+                        <div class="form-group">
 
-            <input asp-for="@Model.SlikaFajl" type="file" name="SlikaFajl" id="SlikaFajl" />
-            <input type="button" value="Change Image" onclick="document.getElementById('SlikaFajl').click();" class="btn btn-yellow" />
+                            <input asp-for="@Model.SlikaFajl" type="file" name="SlikaFajl" id="SlikaFajl" hidden />
+                            <input type="button" value="Izaberi novu sliku" onclick="document.getElementById('SlikaFajl').click();" class="btn btn-primary" />
 
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Add" class="btn btn-primary" asp-action="Create" />
-        </div>
-    
-</form>
-
+                            <input type="submit" value="Dodaj učitanu sliku" class="btn btn-primary" asp-action="Create" />
+                            <input type="submit" value="Vrati se nazad" class="btn btn-primary" asp-controller="Slika" asp-action="GalerijaAdmin" />
+                        </div>
+                        <div class="gap-40"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
