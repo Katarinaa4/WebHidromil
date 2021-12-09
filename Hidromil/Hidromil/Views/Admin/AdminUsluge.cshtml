@@ -3,3 +3,30 @@
     Layout = "_LayoutGalerijaAdmin";
     ViewData["Title"] = "Usluge";
 }
+@{
+    IList<Usluga> uslugee = ViewBag.Usluge;
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="gap-40"></div>
+        <div>
+            <input type="submit" value="Dodaj novu uslugu" asp-action="AdminDodajUslugu" asp-controller="Admin" />
+        </div>
+        <div class="gap-40"></div>
+        @foreach (var u in uslugee)
+        {
+            <div class="row">
+                <a class="gallery-popup gallery" src="data:image/png;base64,@u.Putanja" aria-label="project-img" style="height:150px; width:200px;">
+                    <img src="data:image/png;base64,@u.Putanja" class="img-fluid" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+
+                </a>
+                <div>@u.Naziv</div>
+                <div>@u.Opis</div>
+                <div>
+                    <input type="submit" value="Obrisi uslugu" asp-controller="Admin" asp-action="ObrisiUslugu" asp-route-id="@u.Id" />
+                </div>
+            </div>
+            <div class="gap-20"></div>
+        }
+    </div>
+</form>
