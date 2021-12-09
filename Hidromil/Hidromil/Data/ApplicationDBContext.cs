@@ -17,6 +17,8 @@ namespace Hidromil.Data
         }
 
         public DbSet<Slika> Slike { get; set; }
+        public DbSet<Kontakt> Kontakt { get; set; }
+        public DbSet<Usluga> Usluge { get; set; }
 
         //public DbSet<Admin> Admin { get; set; }
     }

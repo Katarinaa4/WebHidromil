@@ -114,5 +114,32 @@ namespace Hidromil.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult DeletePost(Slika slika)
+        {
+            if (slika.SlikaFajl != null)
+            {
+                _db.Slike.Remove(slika);
+                _db.SaveChanges();
+            }
+
+            return View();
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult Delete(int id)
+        {
+            Slika slika = _db.Slike.Where(x => x.Id == id).FirstOrDefault();
+            if (slika != null)
+            {
+                _db.Slike.Remove(slika);
+                _db.SaveChanges();
+            }
+
+            return RedirectToAction("GalerijaAdmin", "Slika");
+        }
     }
 }

@@ -40,7 +40,16 @@
                         <a class="gallery-popup gallery" src="data:image/png;base64,@slika.Putanja" aria-label="project-img">
                             <img src="data:image/png;base64,@slika.Putanja" class="img-fluid" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                             <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+
                         </a>
+                    </div>
+                    <div>
+                        <i class="fas fa-trash"></i>
+
+                        <i class="fas fa-arrow-up"></i>
+                        <input type="submit" class="delete-btn" value="Delete" asp-controller="Slika" asp-action="Delete" asp-route-id="@slika.Id" />
+
+                        @*<input type="button" value="Obriši sliku" />*@
                     </div>
                 </div>
             }
@@ -107,3 +116,9 @@
         height: 80%;
     }
 </style>
+@*@section Scripts
+{
+    
+    <script src="~/js/Galerija.js"></script>
+    
+}*@

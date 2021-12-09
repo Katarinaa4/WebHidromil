@@ -47,8 +47,8 @@
                         <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                             <div class="logo">
-                                <a class="d-block" href="index-2.html">
-                                    <img loading="lazy" src="../images/favicon.png" alt="Hidromil">Hidromil
+                                <a class="d-block" asp-controller="Home" asp-action="Index"  style="text-align:end; font-size:x-large;">
+                                    <img style="height:70px; width:170px;" loading="lazy" src="../images/LOGO2.jpg" alt="Hidromil">
                                 </a>
                             </div><!-- logo end -->
 
@@ -59,14 +59,14 @@
                             <div id="navbar-collapse" class="collapse navbar-collapse" style="margin-left:10px;">
                                 <ul class="nav navbar-nav ml-auto align-items-lg-start">
                                     @*<li class="nav-item active">
-                <a asp-controller="Home" asp-action="Index" class="nav-link">Početna </a>
+                    <a asp-controller="Home" asp-action="Index" class="nav-link">Početna </a>
 
-            </li>
+                </li>
 
-            <li class="nav-item">
-                <a asp-controller="Home" asp-action="ONama" class="nav-link">O nama</a>
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="ONama" class="nav-link">O nama</a>
 
-            </li>*@
+                </li>*@
 
                                     <li class="nav-item">
                                         <a asp-controller="Home" asp-action="Usluge" class="nav-link">Usluge </a>
@@ -125,7 +125,7 @@
                                                 <a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter" style="color:black;"></i></a>
                                             </li>
                                             <li>
-                                                <a href="https://instagram.com/themefisher" aria-label="Instagram">
+                                                <a href="https://www.instagram.com/hidromill_/" aria-label="Instagram">
                                                     <i class="fab fa-instagram" style="color:black;"></i>
                                                 </a>
                                             </li>
@@ -158,7 +158,7 @@
             <script src="~/plugins/colorbox/jquery.colorbox.js"></script>
             <!-- shuffle -->
             <script src="~/plugins/shuffle/shuffle.min.js" defer></script>
-
+            <script src="~/js/Galerija.js"></script>
 
             <!-- Google Map API Key-->
             <script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>

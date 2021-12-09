@@ -942,3 +942,4 @@ C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\R
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Slika\IndexSlikaAdmin.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Shared\_LayoutGalerijaAdmin.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Slika\GalerijaAdmin.cshtml.g.cs
+C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Admin\AdminUsluge.cshtml.g.cs

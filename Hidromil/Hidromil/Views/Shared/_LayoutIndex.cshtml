@@ -55,8 +55,8 @@
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                                 <div class="logo">
-                                    <a class="d-block" href="index-2.html">
-                                        <img loading="lazy" src="../images/favicon.png" alt="Hidromil">Hidromil
+                                    <a class="d-block" asp-controller="Home" asp-action="Index"  style="text-align:end; font-size:x-large;">
+                                        <img style="height:70px; width:170px;" loading="lazy" src="../images/LOGO2.jpg" alt="Hidromil">
                                     </a>
                                 </div><!-- logo end -->
 
@@ -93,7 +93,7 @@
 
 
                                     </ul>
-                                  
+
                                 </div>
                             </nav>
                         </div>
@@ -133,7 +133,7 @@
                                             <a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter" style="color:black;"></i></a>
                                         </li>
                                         <li>
-                                            <a href="https://instagram.com/themefisher" aria-label="Instagram">
+                                            <a href="https://www.instagram.com/hidromill_/" aria-label="Instagram">
                                                 <i class="fab fa-instagram" style="color:black;"></i>
                                             </a>
                                         </li>
@@ -160,6 +160,28 @@
               <!-- Javascript Files
     ================================================== -->
         <!-- initialize jQuery Library -->
+        <!--<script src="~/plugins/jQuery/jquery.min.js"></script>-->
+        <!-- Bootstrap jQuery -->
+        <!--<script src="~/plugins/bootstrap/bootstrap.min.js" defer></script>-->
+        <!-- Slick Carousel -->
+        <!--<script src="~/plugins/slick/slick.min.js"></script>
+    <script src="~/plugins/slick/slick-animation.min.js"></script>-->
+        <!-- Color box -->
+        <!--<script src="~/plugins/colorbox/jquery.colorbox.js"></script>-->
+        <!-- shuffle -->
+        <!--<script src="~/plugins/shuffle/shuffle.min.js" defer></script>-->
+        <!-- Google Map API Key-->
+        <!--<script src="../https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>-->
+        <!-- Google Map Plugin-->
+        <!--<script src="~/plugins/google-map/map.js" defer></script>-->
+        <!-- Template custom -->
+        <!--<script src="../js/script.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    await RenderSectionAsync("Scripts", required: false)-->
+
         <script src="~/plugins/jQuery/jquery.min.js"></script>
         <!-- Bootstrap jQuery -->
         <script src="~/plugins/bootstrap/bootstrap.min.js" defer></script>
@@ -179,11 +201,6 @@
 
         <!-- Template custom -->
         <script src="../js/script.js"></script>
-
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @await RenderSectionAsync("Scripts", required: false)
 
     </div><!-- Body inner end -->
 </body>
