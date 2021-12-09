@@ -18,6 +18,7 @@ namespace Hidromil.Controllers
         [BindProperty]
         public int br { get; set; }
         public Usluga usluga { get; set; }
+        public Kontakt Kontakt { get; set; }
         public AdminController(ApplicationDBContext db)
         {
             _db = db;
@@ -80,7 +81,71 @@ namespace Hidromil.Controllers
 
             return RedirectToAction("AdminUsluge", "Admin");
         }
-        
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult AdminKontakt()
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            ViewBag.Kontakt = Kontakt;
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult AdminKontakt1()
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            ViewBag.Kontakt = Kontakt;
+            return RedirectToAction("AdminKontakt","Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult AdminDodajKontakt()
+        {
+            Kontakt kontakt = new Kontakt();
+            kontakt.Email = "servishidromil@gmail.com";
+            kontakt.FiksniBr = "8356 806";
+            kontakt.MobilniBr = "+381 62 124 99 56";
+            kontakt.Napomena = "";
+            _db.Kontakt.Add(kontakt);
+            _db.SaveChanges();
+            return RedirectToAction("AdminKontakt","Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult IzmeniInformacije()
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            ViewBag.Kontakt = Kontakt;
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult UpdateKontakt(Kontakt kontakt)
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            if (kontakt.Email != null)
+                Kontakt.Email = kontakt.Email;
+            if (kontakt.FiksniBr != null)
+                Kontakt.FiksniBr = kontakt.FiksniBr;
+            if (kontakt.MobilniBr != null)
+                Kontakt.MobilniBr = kontakt.MobilniBr;
+            _db.Kontakt.Update(Kontakt);
+            _db.SaveChanges();
+            return RedirectToAction("AdminKontakt", "Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult DodajNapomenu()
+        {
+            
+            return View();
+        }
 
         public IActionResult Index()
         {

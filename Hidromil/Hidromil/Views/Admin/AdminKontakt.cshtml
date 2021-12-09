@@ -1,0 +1,73 @@
+﻿@model Hidromil.Models.Slika
+@{
+    Layout = "_LayoutGalerijaAdmin";
+    ViewData["Title"] = "Kontakt";
+}
+@{ 
+    Kontakt kontakt = ViewBag.Kontakt;
+}
+<form method="post">
+    <div class="body-inner">
+        <div class="banner-carousel banner-carousel-2 mb-0">
+            <div class="banner-area" style="        background-image: url(../images/Images/Heavy.jpg)">
+                <div class="banner-text">
+                    <div class="container">
+                    
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="banner-heading">
+                                    <div class="box-slider-text">
+                                        <h1 class="banner-title">Kontakt</h1>
+                                    </div>
+                                </div>
+                            </div><!-- Col end -->
+                        </div><!-- Row end -->
+                    </div><!-- Container end -->
+                </div><!-- Banner text end -->
+            </div>
+        </div>
+
+
+        <section id="facts" class="facts-area dark-bg">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <input type="submit" value="Izmeni informacije" asp-controller="Admin" asp-action="IzmeniInformacije" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Dodaj napomenu" asp-controller="Admin" asp-action="DodajNapomenu" />
+                    </div>
+                </div>
+                <div class="facts-wrapper">
+                    <div class="row">
+
+                        <div class="col-sm-3 col-md-5 ts-facts mt-5 mt-sm-0">
+                            <div class="ts-facts-content" style="margin-top:30px;">
+                                <p><i class="fas fa-envelope-square"> </i> @kontakt.Email </p>
+                                <p><i class="fas fa-mobile-alt"> </i> @kontakt.MobilniBr </p>
+                                <p><i class="fas fa-phone-square-alt"></i> @kontakt.FiksniBr </p>
+                                <p><i class="fas fa-map-marker-alt"></i> Stubica</p>
+                                <p><i class="fas fa-business-time"></i> Pon-Pet 08:00 - 17:00h</p>
+                                <p> Sub 08:00 - 14:00h</p>
+                            </div>
+                        </div><!-- Col end -->
+                        @*<div>
+                    <input type="submit" asp-action="AdminDodajKontakt" asp-controller="Admin" />
+                </div>*@
+                        <div class="col-md-7 col-sm-9 ts-facts mt-5 mt-md-0">
+                            <div class="ts-facts-content">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92893.09546117656!2d21.8233187154524!3d43.31615948181496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b0c240c81f65%3A0x56319fe3122ac3cd!2z0J3QuNGI!5e0!3m2!1ssr!2srs!4v1634938561416!5m2!1ssr!2srs" width="330px" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div><!-- Col end -->
+
+
+
+                    </div> <!-- Facts end -->
+                </div>
+                <!--/ Content row end -->
+            </div>
+            <!--/ Container end -->
+        </section><!-- Facts end -->
+
+    </div>
+</form>
