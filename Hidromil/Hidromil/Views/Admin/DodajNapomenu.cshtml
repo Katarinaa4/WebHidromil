@@ -6,3 +6,32 @@
 @{
     Kontakt kontakt = ViewBag.Kontakt;
 }
+
+<form method="post">
+    <div class="container">
+        <div>
+            @if(kontakt.Napomena == null)
+            {
+                <div>
+                    Unesite napomenu:
+                    <input type="text" asp-for="@Model.Napomena" />
+                    <div class="row">
+                        <input type="submit" value="Sačuvaj unetu napomenu" asp-controller="Admin" asp-action="SacuvajNapomenu" />
+                        <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+                    </div>
+                </div>
+            }
+            @if(kontakt.Napomena != null)
+            {
+                <div>
+                    Napomena je već uneta:
+                    <input type="text" value="@kontakt.Napomena" asp-for="@Model.Napomena" />
+                    <div class="row">
+                        <input type="submit" value="Sačuvaj promenu" asp-controller="Admin" asp-action="SacuvajPromenu" />
+                        <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</form>

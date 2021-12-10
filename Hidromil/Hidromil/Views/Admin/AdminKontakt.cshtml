@@ -59,10 +59,21 @@
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92893.09546117656!2d21.8233187154524!3d43.31615948181496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b0c240c81f65%3A0x56319fe3122ac3cd!2z0J3QuNGI!5e0!3m2!1ssr!2srs!4v1634938561416!5m2!1ssr!2srs" width="330px" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div><!-- Col end -->
-
-
-
+                    @if (kontakt.Napomena != null)
+                    {
+                    <div class="container">
+                        <div class="row">
+                            <div class="warning">
+                                @kontakt.Napomena
+                            </div>
+                            <div>
+                                <input type="submit" value="Ukloni napomenu" asp-controller="Admin" asp-action="UkloniNapomenu" />
+                            </div>
+                        </div>
+                    </div>
+                    }
                     </div> <!-- Facts end -->
+
                 </div>
                 <!--/ Content row end -->
             </div>

@@ -143,8 +143,52 @@ namespace Hidromil.Controllers
         [Authorize]
         public IActionResult DodajNapomenu()
         {
-            
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            ViewBag.Kontakt = Kontakt;
             return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult SacuvajPromenu(Kontakt kontakt)
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            if(kontakt.Napomena != null)
+            {
+                Kontakt.Napomena = kontakt.Napomena;
+                _db.Kontakt.Update(Kontakt);
+                _db.SaveChanges();
+            }
+            return RedirectToAction("AdminKontakt","Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult SacuvajNapomenu(Kontakt kontakt)
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            if (kontakt.Napomena != null)
+            {
+                Kontakt.Napomena = kontakt.Napomena;
+                _db.Kontakt.Update(Kontakt);
+                _db.SaveChanges();
+            }
+            return RedirectToAction("AdminKontakt", "Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult UkloniNapomenu()
+        {
+            Kontakt = _db.Kontakt.FirstOrDefault();
+            if (Kontakt.Napomena != null)
+            {
+                Kontakt.Napomena = null;
+                _db.Kontakt.Update(Kontakt);
+                _db.SaveChanges();
+                
+            }
+            return RedirectToAction("AdminKontakt", "Admin");
         }
 
         public IActionResult Index()
