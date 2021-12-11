@@ -1,77 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-
-        <!-- Basic Page Needs
-        ================================================== -->
-        <meta charset="utf-8">
-        <title>Constra - Construction Html5 Template</title>
-
-        <!-- Mobile Specific Metas
-        ================================================== -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Construction Html5 Template">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-        <!-- Favicon
-        ================================================== -->
-        <link rel="icon" type="image/png" href="images/favicon.png">
-
-        <!-- CSS
-        ================================================== -->
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
-        <!-- Animation -->
-        <link rel="stylesheet" href="plugins/animate-css/animate.css">
-        <!-- slick Carousel -->
-        <link rel="stylesheet" href="plugins/slick/slick.css">
-        <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-        <!-- Colorbox -->
-        <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-        <!-- Template styles-->
-        <link rel="stylesheet" href="css/style.css">
-
-        <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/46/11/intl/sr_ALL/common.js"></script>
-        <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/46/11/intl/sr_ALL/util.js"></script>
-    </head>
-    <body>
-        @{
-            Slika slikaa = ViewBag.slika;
-            IList<Slika> slikee = ViewBag.slike;
-            int brr = ViewBag.br;
-        }
-        
-            <!-- Javascript Files
-        ================================================== -->
-            <!-- initialize jQuery Library -->
-            <script src="plugins/jQuery/jquery.min.js"></script>
-            <!-- Bootstrap jQuery -->
-            <script src="plugins/bootstrap/bootstrap.min.js" defer=""></script>
-            <!-- Slick Carousel -->
-            <script src="plugins/slick/slick.min.js"></script>
-            <script src="plugins/slick/slick-animation.min.js"></script>
-            <!-- Color box -->
-            <script src="plugins/colorbox/jquery.colorbox.js"></script>
-            <!-- shuffle -->
-            <script src="plugins/shuffle/shuffle.min.js" defer=""></script>
-
-
-            <!-- Google Map API Key-->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer=""></script>
-            <!-- Google Map Plugin-->
-            <script src="plugins/google-map/map.js" defer=""></script>
-
-            <!-- Template custom -->
-            <script src="js/script.js"></script>
-
-        <!-- Body inner end -->
-
-            <form method="post" enctype="multipart/form-data">
-                <div id="cboxLoadedContent" style="overflow: auto;" >
-                    <img  src="data:image/png;base64, @slikaa.Putanja" style="margin-top: 0px; cursor: pointer; float: none; max-height:800px; max-width:900px; height:700px; width:800px;" >
-                </div>
-            </form>
-    </body>
-</html>
+﻿@{ 
+    Layout = "_LayoutSlika";
+    ViewData["Title"] = "Galerija";
+}
+@{
+    Slika slikaa = ViewBag.slika;
+    IList<Slika> slikee = ViewBag.slike;
+    int brr = ViewBag.br;
+}
+<form method="post" enctype="multipart/form-data">
+    <div id="cboxLoadedContent" style="overflow: auto;">
+        <img src="data:image/png;base64, @slikaa.Putanja" style="margin-top: 0px; cursor: pointer; float: none; max-height:800px; max-width:900px; height:700px; width:800px;">
+    </div>
+</form>
