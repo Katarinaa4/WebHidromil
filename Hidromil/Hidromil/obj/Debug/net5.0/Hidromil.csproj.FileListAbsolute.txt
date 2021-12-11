@@ -947,3 +947,5 @@ C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\R
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Admin\AdminKontakt.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Admin\IzmeniInformacije.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Admin\DodajNapomenu.cshtml.g.cs
+C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Admin\ObrisiUslugu.cshtml.g.cs
+C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Slika\Obrisi.cshtml.g.cs

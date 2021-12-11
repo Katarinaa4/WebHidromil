@@ -3,7 +3,7 @@
 @inject SignInManager<Admin> SignInManager
 @inject UserManager<Admin> UserManager
 @{
-    ViewData["Title"] = "Hidromil";
+    ViewData["Title"] = "Početna";
     if (User.IsInRole(Role.Admin.ToString()))
     {
         Layout = "~/Views/Shared/_LayoutAdmin.cshtml";

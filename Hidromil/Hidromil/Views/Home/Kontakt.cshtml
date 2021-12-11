@@ -2,6 +2,9 @@
     Layout = "_LayoutIndex";
     ViewData["Title"] = "Kontakt";
 }
+@{
+    Kontakt kontakt = ViewBag.kontakt;
+}
 <div class="body-inner">
     <div class="banner-carousel banner-carousel-2 mb-0">
         <div class="banner-area" style="        background-image: url(../images/Images/Heavy.jpg)">
@@ -12,9 +15,9 @@
                             <div class="banner-heading">
                                 <div class="box-slider-text">
                                     <h1 class="banner-title">Kontakt</h1>
-                                    </div>
                                 </div>
-                            </div><!-- Col end -->
+                            </div>
+                        </div><!-- Col end -->
                     </div><!-- Row end -->
                 </div><!-- Container end -->
             </div><!-- Banner text end -->
@@ -28,10 +31,25 @@
                 <div class="row">
 
                     <div class="col-sm-3 col-md-5 ts-facts mt-5 mt-sm-0">
+                        <div class="fas">
+                            @if (kontakt.Napomena != null)
+                            {
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="text-warning">
+                                            @kontakt.Napomena
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
                         <div class="ts-facts-content" style="margin-top:30px;">
-                            <p><i class="fas fa-envelope-square"> </i>  servishidromil@gmail.com</p>
-                            <p><i class="fas fa-mobile-alt"> </i>+381 62 124 99 56</p>
-                            <p><i class="fas fa-phone-square-alt"></i> 8356 886</p>
+
+                            <p><i class="fas fa-envelope-square"> </i> @kontakt.Email </p>
+                            <p><i class="fas fa-mobile-alt"> </i> @kontakt.MobilniBr </p>
+                            <p><i class="fas fa-phone-square-alt"></i> @kontakt.FiksniBr </p>
                             <p><i class="fas fa-map-marker-alt"></i> Stubica</p>
                             <p><i class="fas fa-business-time"></i> Pon-Pet 08:00 - 17:00h</p>
                             <p> Sub 08:00 - 14:00h</p>
@@ -51,6 +69,7 @@
             <!--/ Content row end -->
         </div>
         <!--/ Container end -->
+        
     </section><!-- Facts end -->
 
 </div>

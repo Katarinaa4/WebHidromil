@@ -14,7 +14,13 @@
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Constra - Construction Html5 Template</title>
+    <title>Hidromil - Login</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Construction Html5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -24,7 +30,30 @@
 
     <!-- Favicon
     ================================================== -->
-    <link rel="icon" type="image/png" href="~/images/favicon.png">
+    <link rel="icon" type="image/png" href="~/images/logo1.jpg">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/plugins/bootstrap/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="~/plugins/fontawesome/css/all.min.css">
+    <!-- Animation -->
+    <link rel="stylesheet" href="~/plugins/animate-css/animate.css">
+    <!-- slick Carousel -->
+    <link rel="stylesheet" href="~/plugins/slick/slick.css">
+    <link rel="stylesheet" href="~/plugins/slick/slick-theme.css">
+    <!-- Colorbox -->
+    <link rel="stylesheet" href="~/plugins/colorbox/colorbox.css">
+    <!-- Template styles-->
+    <link rel="stylesheet" href="~/css/style.css">
+
+
+    <!-- Modernizr JS -->
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
 
     <!-- CSS
     ================================================== -->
@@ -74,11 +103,10 @@
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
 
                                 <div class="logo">
-                                    <a class="d-block" href="index-2.html">
-                                        <img loading="lazy" src="../images/favicon.png" alt="Hidromil">Hidromil
+                                    <a class="d-block" asp-controller="Home" asp-action="Index" style="text-align:end; font-size:x-large;">
+                                        <img style="height:70px; width:170px;" loading="lazy" src="~/images/LOGO2.jpg" alt="Hidromil">
                                     </a>
                                 </div><!-- logo end -->
-
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
 
@@ -216,7 +244,7 @@
             </div><!-- Copyright end -->
         </footer><!-- Footer end -->
         <!-- Javascript Files
-        ================================================== -->
+    ================================================== -->
         <!-- initialize jQuery Library -->
         <script src="~/plugins/jQuery/jquery.min.js"></script>
         <!-- Bootstrap jQuery -->
@@ -240,6 +268,16 @@
 
         <!-- Template custom -->
         <script src="../js/script.js"></script>
+        <script src="~/plugins/jQuery/jquery.min.js"></script>
+        <!-- Bootstrap jQuery -->
+        <script src="~/plugins/bootstrap/bootstrap.min.js" defer></script>
+        <!-- Slick Carousel -->
+        <script src="~/plugins/slick/slick.min.js"></script>
+        <script src="~/plugins/slick/slick-animation.min.js"></script>
+        <!-- Color box -->
+        <script src="~/plugins/colorbox/jquery.colorbox.js"></script>
+        <!-- shuffle -->
+        <script src="~/plugins/shuffle/shuffle.min.js" defer></script>
 
     </div><!-- Body inner end -->
 </body>

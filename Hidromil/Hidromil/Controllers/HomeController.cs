@@ -18,6 +18,10 @@ namespace Hidromil.Controllers
 
         private readonly ApplicationDBContext _db;
 
+        [BindProperty]
+        public IList<Usluga> usluge { get; set; }
+        public Kontakt kontakt { get; set; }
+
         private readonly UserManager<Admin> _userManager;
 
         public HomeController(ApplicationDBContext db, UserManager<Admin> userManager)
@@ -42,6 +46,7 @@ namespace Hidromil.Controllers
 
         public IActionResult ONama()
         {
+           
             return View();
         }
 
@@ -56,10 +61,15 @@ namespace Hidromil.Controllers
 
         public IActionResult Usluge()
         {
+            usluge = _db.Usluge.ToList();
+            ViewBag.usluge = usluge;
+
             return View();
         }
         public IActionResult Kontakt()
         {
+            kontakt = _db.Kontakt.FirstOrDefault();
+            ViewBag.kontakt = kontakt;
             return View();
         }
 

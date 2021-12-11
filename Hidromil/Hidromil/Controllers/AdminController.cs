@@ -36,6 +36,16 @@ namespace Hidromil.Controllers
 
         [HttpPost]
         [Authorize]
+        public IActionResult AdminUsluge1()
+        {
+            Usluge = _db.Usluge.ToList();
+            ViewBag.Usluge = Usluge;
+
+            return RedirectToAction("AdminUsluge", "Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
         public IActionResult AdminDodajUslugu()
         {
             //if(usluga != null)
@@ -71,6 +81,16 @@ namespace Hidromil.Controllers
         [HttpPost]
         [Authorize]
         public IActionResult ObrisiUslugu(int id)
+        {
+            Usluga usluga = _db.Usluge.Where(x => x.Id == id).FirstOrDefault();
+            ViewBag.usluga = usluga;
+
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Obrisi(int id)
         {
             Usluga usluga = _db.Usluge.Where(x => x.Id == id).FirstOrDefault();
             if(usluga != null)

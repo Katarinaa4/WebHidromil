@@ -9,29 +9,41 @@
 
 <form method="post">
     <div class="container">
+        
+        <div class="gap-60"></div>
         <div>
-            @if(kontakt.Napomena == null)
+            @if (kontakt.Napomena == null)
             {
-                <div>
+            <div class="container">
+                <div class="row">
                     Unesite napomenu:
-                    <input type="text" asp-for="@Model.Napomena" />
-                    <div class="row">
-                        <input type="submit" value="Sačuvaj unetu napomenu" asp-controller="Admin" asp-action="SacuvajNapomenu" />
-                        <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
-                    </div>
+                    <div class="gap-40"></div>
+
+                    <input type="text" asp-for="@Model.Napomena" style="margin-left:3%;" />
                 </div>
+                <div class="row">
+                   
+                    <div class="gap-60"></div>
+                    <input type="submit" value="Sačuvaj unetu napomenu" asp-controller="Admin" asp-action="SacuvajNapomenu" />
+                    <input type="submit" style="margin-left:5%;" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+                </div>
+            </div>
             }
-            @if(kontakt.Napomena != null)
+            @if (kontakt.Napomena != null)
             {
-                <div>
-                    Napomena je već uneta:
-                    <input type="text" value="@kontakt.Napomena" asp-for="@Model.Napomena" />
-                    <div class="row">
-                        <input type="submit" value="Sačuvaj promenu" asp-controller="Admin" asp-action="SacuvajPromenu" />
-                        <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
-                    </div>
-                </div>
+        <div>
+            Napomena je već uneta:
+            <input type="text" value="@kontakt.Napomena" asp-for="@Model.Napomena" style="margin-left: 3%; font-size:14pt; height:200px;"/>
+            
+            <div class="gap-60"></div>
+            <div class="row">
+                <input type="submit" value="Sačuvaj promenu" asp-controller="Admin" asp-action="SacuvajPromenu" />
+                <input type="submit" style="margin-left:5%;" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+            </div>
+        </div>
             }
         </div>
     </div>
+    <div class="gap-60"></div>
+    <div class="gap-60"></div>
 </form>

@@ -141,5 +141,19 @@ namespace Hidromil.Controllers
 
             return RedirectToAction("GalerijaAdmin", "Slika");
         }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult Obrisi(int id)
+        {
+            Slika slika = _db.Slike.Where(x => x.Id == id).FirstOrDefault();
+            if (slika != null)
+            {
+                _db.Slike.Remove(slika);
+                _db.SaveChanges();
+            }
+
+            return View();
+        }
     }
 }

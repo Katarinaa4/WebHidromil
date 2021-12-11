@@ -9,39 +9,52 @@
 <form method="post">
     <div class="container">
         <div class="row">
-            <div>
+            <div style="margin-left:5%;">
+                <div class="gap-60"></div>
+                <div class="gap-60"></div>
                 <div>
                     Email: @kontakt.Email
                 </div>
+                <div class="gap-40"></div>
                 <div>
                     Broj mobilnog telefona: @kontakt.MobilniBr
                 </div>
+                <div class="gap-40"></div>
                 <div>
                     Broj fiksnog telefona: @kontakt.FiksniBr
                 </div>
+                <div class="gap-60"></div>
             </div>
-            <div>
+            <div style="width:10%;"></div>
+            <div style="margin-left:5%;">
+                <div class="gap-60"></div>
+                <div class="gap-60"></div>
                 <div>
                     Nova email adresa:
                     <input type="text" asp-for="@Model.Email" />
                 </div>
+                <div class="gap-40"></div>
                 <div>
                     Nov broj mobilnog telefona:
                     <input type="text" asp-for="@Model.MobilniBr" />
                 </div>
+                <div class="gap-40"></div>
                 <div>
                     Nov broj fiksnog telefona:
                     <input type="text" asp-for="@Model.FiksniBr" />
                 </div>
+                <div class="gap-60"></div>
             </div>
         </div>
         <div class="row">
-            <div>
+            <div style="margin-left:5%;">
                 <input type="submit" value="Sačuvaj promene" asp-controller="Admin" asp-action="UpdateKontakt" />
             </div>
-            <div>
+            <div style="margin-left:5%;">
                 <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
             </div>
+            <div class="gap-60"></div>
+            <div class="gap-60"></div>
         </div>
     </div>
 </form>

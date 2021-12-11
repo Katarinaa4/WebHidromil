@@ -6,27 +6,59 @@
 @{
     IList<Usluga> uslugee = ViewBag.Usluge;
 }
-<form method="post" enctype="multipart/form-data">
-    <div class="container">
-        <div class="gap-40"></div>
-        <div>
-            <input type="submit" value="Dodaj novu uslugu" asp-action="AdminDodajUslugu" asp-controller="Admin" />
-        </div>
-        <div class="gap-40"></div>
-        @foreach (var u in uslugee)
-        {
-            <div class="row">
-                <a class="gallery-popup gallery" src="data:image/png;base64,@u.Putanja" aria-label="project-img" style="height:150px; width:200px;">
-                    <img src="data:image/png;base64,@u.Putanja" class="img-fluid" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 
-                </a>
-                <div>@u.Naziv</div>
-                <div>@u.Opis</div>
-                <div>
-                    <input type="submit" value="Obrisi uslugu" asp-controller="Admin" asp-action="ObrisiUslugu" asp-route-id="@u.Id" />
-                </div>
+<form method="post" enctype="multipart/form-data">
+    <section id="main-container" class="main-container">
+        <div class="container">
+            <div class="gap-40"></div>
+            <div>
+                <input type="submit" value="Dodaj novu uslugu" asp-action="AdminDodajUslugu" asp-controller="Admin" />
             </div>
-            <div class="gap-20"></div>
-        }
-    </div>
+            <div class="gap-40"></div>
+            <div style="width: 100%; background-color:black; height: 2px;"></div>
+            <div style="width: 100%; background-color:white; height: 1px;"></div>
+            <div style="width: 100%; background-color:#ffb600; height: 12px;"></div>
+            @foreach (var u in @uslugee)
+            {
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="gap-40"></div>
+
+                        <div class="" style="margin-left:10%;">
+                            <div><h4>@u.Naziv</h4></div>
+                            <div>@u.Opis</div>
+                        </div>
+                    </div><!-- Col end -->
+
+                    <div class="col-lg-6 mt-5 mt-lg-0">
+                        <div class="gap-40"></div>
+
+                        <div class="small-bg">
+
+                            <div class="item">
+                                <div class="container usluga">
+                                    <a class="gallery-popup gallery" src="data:image/png;base64,@u.Putanja" aria-label="project-img">
+                                        <img src="data:image/png;base64,@u.Putanja" class="img-lg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" style="height:200px; width:250px; margin-left:10%;">
+
+                                    </a>
+                                </div>
+                            </div><!-- Item 1 end -->
+
+                        </div><!-- Page slider end-->
+
+                    </div><!-- Col end -->
+                    <div class="gap-20"></div>
+                    <div class="swal2-warning">
+                        <input type="submit" value="Obrisi uslugu" asp-controller="Admin" asp-action="ObrisiUslugu" asp-route-id="@u.Id" />
+                    </div>
+                    <div class="gap-40"></div>
+
+                </div><!-- Content row end -->
+                <div style="width: 100%; background-color:black; height: 2px;"></div>
+                <div style="width: 100%; background-color:white; height: 1px;"></div>
+                <div style="width: 100%; background-color:#ffb600; height: 12px;"></div>
+            }
+        </div><!-- Container end -->
+    </section><!-- Main container end -->
 </form>

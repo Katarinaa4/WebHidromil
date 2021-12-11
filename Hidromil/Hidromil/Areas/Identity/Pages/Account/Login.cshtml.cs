@@ -86,7 +86,7 @@ namespace Hidromil.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("IndexSlikaAdmin", "Slika");
+                    return RedirectToAction("AdminUsluge", "Admin");
                     //return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
