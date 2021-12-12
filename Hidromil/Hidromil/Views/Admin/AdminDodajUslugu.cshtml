@@ -1,33 +1,120 @@
 ﻿@model Hidromil.Models.Usluga
 
 @{
-    Layout = "_LayoutGalerijaAdmin";
+    Layout = "_LayoutAdmin";
     ViewData["Title"] = "Usluge";
 }
-<div style=" display:flex; flex:1;">
-    <div class="content-wrapper">
-        <section class="content">
-            <div class="container-fluid">
+<div >
+    
                 <form method="post" asp-action="AdminDodajUslugu" enctype="multipart/form-data">
 
                     <div asp-validation-summary="ModelOnly"></div>
-                    <div class="container">
+                    <div class="">
+                        <div class="container" style="width:100%; align-items:center; text-align:center;">
+                            <div class="gap-30"></div>
+                            <h4>Dodavanje nove usluge</h4>
+                        </div>
+                        <div class="gap-20"></div>
+                        <div class="" style="align-items:center; width:100%; text-align:center;">
+                            
+                            <div class="box2">
+                                <div>
+                                    <input asp-for="@Model.SlikaFajl" type="file" name="SlikaFajl" id="SlikaFajl" hidden />
+                                    <input type="button" value="Dodaj sliku" onclick="document.getElementById('SlikaFajl').click();" class="btn btn-primary" />
+                                   
+                                        <div class="gap-20"></div>
+                                        
+                                        <p>
+                                            <strong>Unesite naziv usluge</strong>
+                                        </p>
+                                            <textarea class="textarea2" asp-for="@Model.Naziv"></textarea>
+                                        
+                                   
+                                </div>
+                                <div>
+                                    <p style="margin-right:10px;">
+                                        <strong>Unesite opis usluge</strong>
+                                        <textarea class="textarea" asp-for="@Model.Opis"></textarea>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
                         <div class="gap-40"></div>
-                        <div class="form-group">
-
-                            <input asp-for="@Model.SlikaFajl" type="file" name="SlikaFajl" id="SlikaFajl" hidden />
-                            <input type="button" value="Dodaj sliku" onclick="document.getElementById('SlikaFajl').click();" class="btn btn-primary" />
-
-                            <input type="text" asp-for="@Model.Naziv" />
-                            <input type="text" asp-for="@Model.Opis" />
-
-                            <input type="submit" value="Dodaj uslugu" class="btn btn-primary" asp-action="DodajUslugu" />
-                            <input type="submit" value="Vrati se nazad" class="btn btn-primary" asp-controller="Slika" asp-action="GalerijaAdmin" />
+                        <div class="col-lg-6 container" style="align-items:center; width:100%; text-align:center;">
+                            
+                                <input type="submit" value="Dodaj uslugu" asp-action="DodajUslugu" />
+                                <input type="submit" value="Vrati se nazad" asp-controller="Slika" asp-action="GalerijaAdmin" />
+                            
                         </div>
                         <div class="gap-40"></div>
                     </div>
                 </form>
-            </div>
-        </section>
-    </div>
-</div>
+       <style scoped>
+           .box {
+               -webkit-flex: 0 50% 50%;
+               -ms-flex: 0 50% 50%;
+               flex: 0 50% 50%;
+               max-width: 100%;
+           }
+           .box2 {
+               width: 100%;
+               flex:1;
+               display: grid;
+               grid-template-columns: 40% 60%;
+               align-content: center;
+               margin-left: 15px;
+           }
+           .textarea {
+               border: 1px solid #ccc;
+               font-family: inherit;
+               font-size: inherit;
+               padding: 1px 6px;
+           }
+           .textarea {
+               display: block;
+               width: 100%;
+               overflow: hidden;
+               resize: both;
+               min-height: 120px;
+               line-height: 20px;
+               
+           }
+           .textarea2 {
+               border: 1px solid #ccc;
+               font-family: inherit;
+               font-size: inherit;
+               padding: 1px 6px;
+           }
+
+           .textarea2 {
+               display: block;
+               width: 40%;
+               overflow: hidden;
+               resize: both;
+               min-height: 40px;
+               line-height: 20px;
+               margin-left:30%;
+               margin-right:30%;
+           }
+
+
+       </style>
+
+    @section Scripts
+    {
+    <script>
+        // Dealing with Textarea Height
+        function calcHeight(value) {
+            let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+            // min-height + lines x line-height + padding + border
+            let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+            return newHeight;
+        }
+
+        let textarea = document.querySelector(".resize-ta");
+        textarea.addEventListener("keyup", () => {
+            textarea.style.height = calcHeight(textarea.value) + "px";
+        });
+    </script>
+    }

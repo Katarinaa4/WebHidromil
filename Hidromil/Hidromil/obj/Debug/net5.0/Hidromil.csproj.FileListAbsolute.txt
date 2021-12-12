@@ -950,3 +950,4 @@ C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\R
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Admin\ObrisiUslugu.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Slika\Obrisi.cshtml.g.cs
 C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Shared\_LayoutSlika.cshtml.g.cs
+C:\Users\Korisnik\Desktop\Hidromil\Hidromil\Hidromil\Hidromil\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs

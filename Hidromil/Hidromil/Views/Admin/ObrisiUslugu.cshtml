@@ -1,28 +1,27 @@
 ﻿@model Hidromil.Models.Slika
 @{
-    Layout = "_LayoutGalerijaAdmin";
+    Layout = "_LayoutAdmin";
     ViewData["Title"] = "Brisanje usluge";
 }
 @{
     Usluga usluga = ViewBag.usluga;
 }
 <form method="post" enctype="multipart/form-data">
-    <section id="main-container" class="main-container">
-        <div class="container">
+   
             <div class="col-lg-6 container" style="align-items:center; text-align:center; width:100%;">
-                <div class="gap-30"></div>
-                <h3>Da li ste sigurni da želite da obrišete ovu uslugu?</h3>
-                <div class="gap-30"></div>
+                <div class="gap-20"></div>
+                <h6>Da li ste sigurni da želite da obrišete ovu uslugu?</h6>
+                
             </div>
-            <div style="width: 100%; background-color:black; height: 2px;"></div>
+            @*<div style="width: 100%; background-color:black; height: 2px;"></div>
             <div style="width: 100%; background-color:white; height: 1px;"></div>
-            <div style="width: 100%; background-color:#ffb600; height: 12px;"></div>
+            <div style="width: 100%; background-color:#ffb600; height: 12px;"></div>*@
 
             <div class="row">
 
 
                 <div class="col-lg-6">
-                    <div class="gap-40"></div>
+                    <div class="gap-20"></div>
 
                     <div class="" style="margin-left:10%;">
                         <div><h4>@usluga.Naziv</h4></div>
@@ -43,7 +42,7 @@
                                 </a>
                             </div>
                         </div><!-- Item 1 end -->
-                        <div class="gap-40"></div>
+                        <div class="gap-20"></div>
                     </div><!-- Page slider end-->
 
                 </div><!-- Col end -->
@@ -51,10 +50,10 @@
                 <div class="gap-40"></div>
 
             </div><!-- Content row end -->
-            <div style="width: 100%; background-color:black; height: 2px;"></div>
+            @*<div style="width: 100%; background-color:black; height: 2px;"></div>
             <div style="width: 100%; background-color:white; height: 1px;"></div>
-            <div style="width: 100%; background-color:#ffb600; height: 12px;"></div>
-            <div class="gap-60"></div>
+            <div style="width: 100%; background-color:#ffb600; height: 12px;"></div>*@
+            @*<div class="gap-60"></div>*@
             <div class="col-lg-6 container" style="align-items:center; width:100%; text-align:center;">
                 
                     <input type="submit" value="Obriši uslugu" asp-controller="Admin" asp-action="Obrisi" asp-route-id="@usluga.Id" />
@@ -62,6 +61,4 @@
                     <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminUsluge1" />
                
             </div>
-        </div><!-- Container end -->
-    </section><!-- Main container end -->
 </form>

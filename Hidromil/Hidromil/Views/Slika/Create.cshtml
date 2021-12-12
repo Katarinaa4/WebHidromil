@@ -1,21 +1,21 @@
 ﻿@model Hidromil.Models.Slika
 @{
-    Layout = "_LayoutGalerijaAdmin";
+    Layout = "_LayoutAdmin";
     ViewData["Title"] = "Create";
 }
 
-    <div style=" display:flex; flex:1;">
-        <div class="content-wrapper container">
+    <div>
+        <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
-                    <form method="post" asp-action="Create" enctype="multipart/form-data">
+                    <form method="post" asp-action="Create" enctype="multipart/form-data" style=" display:flex; flex:1;">
 
                         <div asp-validation-summary="ModelOnly"></div>
                         <div class="container" style="width:100%; align-items:center; text-align:center;">
-                            <div style="width: 100%; background-color:black; height: 4px;"></div>
-                            <div style="width: 100%; background-color:white; height: 2px;"></div>
-                            <div style="width: 100%; background-color:#ffb600; height: 24px;"></div>
-                            <div class="gap-60"></div>
+                            @*<div style="width: 100%; background-color:black; height: 4px;"></div>
+        <div style="width: 100%; background-color:white; height: 2px;"></div>
+        <div style="width: 100%; background-color:#ffb600; height: 24px;"></div>*@
+                            @*<div class="gap-60"></div>*@
                             <div class="gap-60"></div>
                             <div class="form-group">
 
@@ -25,11 +25,11 @@
                                 <input type="submit" style="margin:3px 3px 3px 3px;" value="Dodaj učitanu sliku" class="btn btn-primary" asp-action="Create" />
                                 <input type="submit" style="margin:3px 3px 3px 3px;" value="Vrati se nazad" class="btn btn-primary" asp-controller="Slika" asp-action="GalerijaAdmin" />
                             </div>
-                            <div class="gap-60"></div>
-                            <div class="gap-60"></div>
-                            <div style="width: 100%; background-color:black; height: 4px;"></div>
-                            <div style="width: 100%; background-color:white; height: 2px;"></div>
-                            <div style="width: 100%; background-color:#ffb600; height: 24px;"></div>
+                            @*<div class="gap-60"></div>
+        <div class="gap-60"></div>
+        <div style="width: 100%; background-color:black; height: 4px;"></div>
+        <div style="width: 100%; background-color:white; height: 2px;"></div>
+        <div style="width: 100%; background-color:#ffb600; height: 24px;"></div>*@
                         </div>
                     </form>
                 </div>
