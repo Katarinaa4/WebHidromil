@@ -1,1 +1,27 @@
-﻿
+﻿@model Hidromil.Models.Slika
+@{
+    Layout = "_LayoutGalerijaAdmin";
+    ViewData["Title"] = "Brisanje slike";
+}
+@{
+    Slika slika = ViewBag.slika;
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="gap-60"></div>
+        <div style="width:100%; text-align:center; align-items:center;">
+            <h4>Da li ste sigurni da želite da obrišete ovu sliku?</h4>
+        </div>
+        <div class="gap-60"></div>
+        <div class="container col-lg-6 mt-5 mt-lg-0" id="cboxLoadedContent" style="overflow: auto; width:100%; align-items:center; text-align:center;">
+            <img src="data:image/png;base64, @slika.Putanja" style="margin-top: 0px; cursor: pointer; float: none; max-height:300px; max-width:500px; height:700px; width:800px;">
+        </div>
+        <div class="gap-60"></div>
+        <div class="col-lg-6 container" style="align-items:center; width:100%; text-align:center;">
+            <input type="submit" style="margin-right:4px;" value="Obriši" asp-controller="Slika" asp-action="Delete" asp-route-id="@slika.Id" />
+            <input type="submit" style="margin-left:4px;" value="Vrati se nazad" asp-controller="Slika" asp-action="GalerijaAdmin" />
+
+        </div>
+        <div class="gap-60"></div>
+    </div>
+</form>

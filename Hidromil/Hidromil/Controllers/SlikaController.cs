@@ -128,7 +128,7 @@ namespace Hidromil.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         [Authorize]
         public IActionResult Delete(int id)
         {
@@ -147,11 +147,7 @@ namespace Hidromil.Controllers
         public IActionResult Obrisi(int id)
         {
             Slika slika = _db.Slike.Where(x => x.Id == id).FirstOrDefault();
-            if (slika != null)
-            {
-                _db.Slike.Remove(slika);
-                _db.SaveChanges();
-            }
+            ViewBag.slika = slika;
 
             return View();
         }
