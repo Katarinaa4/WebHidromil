@@ -9,41 +9,102 @@
 
 <form method="post">
     <div class="container">
-        
-        <div class="gap-60"></div>
+
+        <div class="gap-40"></div>
         <div>
             @if (kontakt.Napomena == null)
             {
             <div class="container">
-                <div class="row">
-                    Unesite napomenu:
-                    <div class="gap-40"></div>
-
-                    <input type="text" asp-for="@Model.Napomena" style="margin-left:3%;" />
+                <div class="">
+                    <p>
+                        Trenutno ne postoji napomena.
+                    </p>
+                    <div class="gap-20"></div>
+                    <p style="margin-right:10px;">
+                        <strong>Unesite novu napomenu</strong>
+                        <textarea class="textarea" asp-for="@Model.Napomena">@kontakt.Napomena</textarea>
+                    </p>
                 </div>
+
+                <div class="gap-30"></div>
                 <div class="row">
-                   
-                    <div class="gap-60"></div>
-                    <input type="submit" value="Sačuvaj unetu napomenu" asp-controller="Admin" asp-action="SacuvajNapomenu" />
-                    <input type="submit" style="margin-left:5%;" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+
+                    <input type="submit" style="margin-left:1%;" value="Sačuvaj unetu napomenu" asp-controller="Admin" asp-action="SacuvajNapomenu" />
+                    <input type="submit" style="margin-left:1%;" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
                 </div>
             </div>
             }
             @if (kontakt.Napomena != null)
             {
-        <div>
-            Napomena je već uneta:
-            <input type="text" value="@kontakt.Napomena" asp-for="@Model.Napomena" style="margin-left: 3%; font-size:14pt; height:200px;"/>
-            
-            <div class="gap-60"></div>
-            <div class="row">
-                <input type="submit" value="Sačuvaj promenu" asp-controller="Admin" asp-action="SacuvajPromenu" />
-                <input type="submit" style="margin-left:5%;" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+            <div>
+                <p>
+                    Trenutna napomena: @kontakt.Napomena
+                </p>
+                <div class="gap-20"></div>
+                <p style="margin-right:10px;">
+                    <strong>Unesite novu napomenu, prethodna će biti zamenjena novom</strong>
+                    <textarea class="textarea" asp-for="@Model.Napomena">@kontakt.Napomena</textarea>
+                </p>
+                <div class="gap-30"></div>
+                <div class="row">
+                    <input type="submit" style="margin-left:1%;" value="Sačuvaj promenu" asp-controller="Admin" asp-action="SacuvajPromenu" />
+                    <input type="submit" style="margin-left:1%;" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminKontakt1" />
+                </div>
             </div>
-        </div>
             }
         </div>
     </div>
-    <div class="gap-60"></div>
-    <div class="gap-60"></div>
+    <div class="gap-40"></div>
 </form>
+<style scoped>
+    .box {
+        -webkit-flex: 0 50% 50%;
+        -ms-flex: 0 50% 50%;
+        flex: 0 50% 50%;
+        max-width: 100%;
+    }
+
+    .box2 {
+        width: 100%;
+        flex: 1;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-content: center;
+        margin-left: 15px;
+    }
+
+    .textarea {
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1px 6px;
+    }
+
+    .textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: both;
+        min-height: 80px;
+        line-height: 20px;
+        margin-right:10%;
+    }
+</style>
+
+@section Scripts
+    {
+    <script>
+        // Dealing with Textarea Height
+        function calcHeight(value) {
+            let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+            // min-height + lines x line-height + padding + border
+            let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+            return newHeight;
+        }
+
+        let textarea = document.querySelector(".resize-ta");
+        textarea.addEventListener("keyup", () => {
+            textarea.style.height = calcHeight(textarea.value) + "px";
+        });
+    </script>
+}
