@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj": {}
+    "C:\\Users\\Korisnik\\OneDrive\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj": {
+    "C:\\Users\\Korisnik\\OneDrive\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj",
         "projectName": "Hidromil",
-        "projectPath": "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj",
+        "projectPath": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\Hidromil.csproj",
         "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\obj\\",
+        "outputPath": "C:\\Users\\Korisnik\\OneDrive\\Desktop\\Hidromil\\Hidromil\\Hidromil\\Hidromil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",

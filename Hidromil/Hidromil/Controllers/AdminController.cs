@@ -80,6 +80,44 @@ namespace Hidromil.Controllers
 
         [HttpPost]
         [Authorize]
+        public IActionResult IzmeniUslugu(int id)
+        {
+            usluga = _db.Usluge.Where(x => x.Id == id).FirstOrDefault();
+            ViewBag.usluga = usluga;
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult SacuvajIzmenjenuUslugu(Usluga uslugaa, int id)
+        {
+            usluga = _db.Usluge.Where(x => x.Id == id).FirstOrDefault();
+            if(uslugaa != null)
+            {
+                if (uslugaa.Naziv != null)
+                    usluga.Naziv = uslugaa.Naziv;
+                if (uslugaa.Opis != null)
+                    usluga.Opis = uslugaa.Opis;
+                if (uslugaa.SlikaFajl != null)
+                {
+                    var a = uslugaa.SlikaFajl.OpenReadStream();
+                    using (BinaryReader br = new BinaryReader(uslugaa.SlikaFajl.OpenReadStream()))
+                    {
+                        byte[] content = br.ReadBytes((int)uslugaa.SlikaFajl.OpenReadStream().Length);
+                        string slikaa = Convert.ToBase64String(content);
+                        usluga.Putanja = slikaa;
+                    }
+                }
+
+                _db.Usluge.Update(usluga);
+                _db.SaveChanges();
+
+            }
+            return RedirectToAction("AdminUsluge","Admin");
+        }
+
+        [HttpPost]
+        [Authorize]
         public IActionResult ObrisiUslugu(int id)
         {
             Usluga usluga = _db.Usluge.Where(x => x.Id == id).FirstOrDefault();

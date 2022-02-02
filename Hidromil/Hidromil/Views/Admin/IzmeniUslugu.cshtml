@@ -1,0 +1,147 @@
+﻿@model Hidromil.Models.Usluga
+
+@{
+    Layout = "_LayoutGalerijaAdmin";
+    ViewData["Title"] = "Usluge";
+}
+@{
+    Usluga usluga = ViewBag.usluga;
+}
+<form method="post" enctype="multipart/form-data">
+
+    <div class="col-lg-6 container" style="align-items:center; text-align:center; width:100%;">
+        <div class="gap-40"></div>
+        <h4>Izmena usluge</h4>
+
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-lg-6">
+            <div class="gap-20"></div>
+
+            <div class="" style="margin-left:10%;">
+                <p><strong>Trenutni naziv usluge:</strong></p>
+                <div><h4>@usluga.Naziv</h4></div>
+                <p>
+                    <strong>Unesite nov naziv usluge</strong>
+                </p>
+                <textarea class="textarea2" asp-for="@Model.Naziv"></textarea>
+
+                <div class="gap-20"></div>
+                <p><strong>Trenutni opis usluge:</strong></p>
+                <div style="margin-right:5%;">@usluga.Opis</div>
+                <div class="gap-20"></div>
+                <p style="margin-right:10px;">
+                    <strong>Unesite nov opis usluge</strong>
+                    <textarea class="textarea" asp-for="@Model.Opis"></textarea>
+                </p>
+            </div>
+            <div class="gap-20"></div>
+        </div><!-- Col end -->
+
+        <div class="col-lg-6 mt-5 mt-lg-0">
+            <div class="gap-40"></div>
+
+            <div class="small-bg">
+
+                <div class="item" style="text-align:center; align-content:center;">
+                    <div class="container">
+                        <a class="gallery-popup gallery" src="data:image/png;base64,@usluga.Putanja" aria-label="project-img">
+                            <img src="data:image/png;base64,@usluga.Putanja" class="img-lg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" style="height:200px; width:250px; margin-left:10%;">
+
+                        </a>
+                    </div>
+                    <div class="gap-30"></div>
+                    <input asp-for="@Model.SlikaFajl" type="file" name="SlikaFajl" id="SlikaFajl" hidden />
+                    <input type="button" style="margin-left:10%;" value="Promeni sliku" onclick="document.getElementById('SlikaFajl').click();" class="btn btn-primary" />
+
+                </div><!-- Item 1 end -->
+                <div class="gap-20"></div>
+            </div><!-- Page slider end-->
+
+        </div><!-- Col end -->
+
+        <div class="gap-40"></div>
+
+    </div><!-- Content row end -->
+
+    <div class="col-lg-6 container" style="align-items:center; width:100%; text-align:center;">
+
+        <input type="submit" value="Sačuvaj izmenjenu uslugu" asp-controller="Admin" asp-action="SacuvajIzmenjenuUslugu" asp-route-id="@usluga.Id" />
+
+        <input type="submit" value="Vrati se nazad" asp-controller="Admin" asp-action="AdminUsluge1" />
+
+    </div>
+    <br />
+    <br />
+</form>
+<style scoped>
+    .box {
+        -webkit-flex: 0 50% 50%;
+        -ms-flex: 0 50% 50%;
+        flex: 0 50% 50%;
+        max-width: 100%;
+    }
+
+    .box2 {
+        width: 100%;
+        flex: 1;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-content: center;
+        margin-left: 15px;
+    }
+
+    .textarea {
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1px 6px;
+    }
+
+    .textarea {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        resize: both;
+        min-height: 120px;
+        line-height: 20px;
+    }
+
+    .textarea2 {
+        border: 1px solid #ccc;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 1px 6px;
+    }
+
+    .textarea2 {
+        display: block;
+        width: 40%;
+        overflow: hidden;
+        resize: both;
+        min-height: 40px;
+        line-height: 20px;
+        
+    }
+</style>
+
+@section Scripts
+    {
+    <script>
+        // Dealing with Textarea Height
+        function calcHeight(value) {
+            let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+            // min-height + lines x line-height + padding + border
+            let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+            return newHeight;
+        }
+
+        let textarea = document.querySelector(".resize-ta");
+        textarea.addEventListener("keyup", () => {
+            textarea.style.height = calcHeight(textarea.value) + "px";
+        });
+    </script>
+}

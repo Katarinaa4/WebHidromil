@@ -332,7 +332,7 @@
         "runtime": {
           "lib/net5.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.821.31805"
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
@@ -346,7 +346,7 @@
         "runtime": {
           "lib/net5.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.821.31805"
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
@@ -365,8 +365,8 @@
         },
         "runtime": {
           "lib/net5.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
-            "assemblyVersion": "5.0.8.0",
-            "fileVersion": "5.0.821.31805"
+            "assemblyVersion": "5.0.12.0",
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
@@ -380,12 +380,12 @@
         },
         "runtime": {
           "lib/net5.0/Microsoft.AspNetCore.Identity.UI.Views.V4.dll": {
-            "assemblyVersion": "5.0.8.0",
-            "fileVersion": "5.0.821.31805"
+            "assemblyVersion": "5.0.12.0",
+            "fileVersion": "5.0.1221.52401"
           },
           "lib/net5.0/Microsoft.AspNetCore.Identity.UI.dll": {
-            "assemblyVersion": "5.0.8.0",
-            "fileVersion": "5.0.821.31805"
+            "assemblyVersion": "5.0.12.0",
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
@@ -828,8 +828,8 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {
-            "assemblyVersion": "5.0.11.0",
-            "fileVersion": "5.0.1121.47202"
+            "assemblyVersion": "5.0.12.0",
+            "fileVersion": "5.0.1221.51310"
           }
         }
       },
@@ -953,7 +953,7 @@
         "runtime": {
           "lib/net5.0/Microsoft.Extensions.FileProviders.Embedded.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.821.31805"
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
@@ -984,7 +984,7 @@
         "runtime": {
           "lib/net5.0/Microsoft.Extensions.Identity.Core.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.821.31805"
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
@@ -1000,7 +1000,7 @@
         "runtime": {
           "lib/net5.0/Microsoft.Extensions.Identity.Stores.dll": {
             "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.821.31805"
+            "fileVersion": "5.0.1221.52401"
           }
         },
         "compile": {
